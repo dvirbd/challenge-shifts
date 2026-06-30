@@ -108,7 +108,7 @@ h1{font-size:21px;font-weight:600;margin-bottom:4px}
    This list is above the calendar. It may grow to multiple rows.
    Do NOT give it a fixed height unless requested; JS function
    withGridScrollLock() keeps the calendar from jumping when chips change. */
-.chips{display:grid;grid-template-columns:repeat(auto-fit,minmax(118px,1fr));gap:6px;margin-bottom:.8rem;min-height:38px;align-content:start;padding-left:3px;padding-right:3px;overflow-x:hidden}
+.chips{display:grid;grid-template-columns:repeat(auto-fill,minmax(118px,1fr));gap:6px;margin-bottom:.8rem;min-height:38px;align-content:start;padding-left:3px;padding-right:3px;overflow-x:hidden}
 .chip{border-radius:7px;padding:7px 28px 7px 8px;font-size:12px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;border:1px solid transparent;min-width:0;min-height:48px;overflow:hidden;white-space:normal;text-align:center;line-height:1.2;cursor:pointer;text-decoration:none;position:relative}
 .chip:hover{filter:brightness(1.08)}
 .chip-main{display:flex;align-items:center;justify-content:center;gap:4px;min-width:0;width:100%}
@@ -240,6 +240,7 @@ function toggleTheme() {
 // If a shift type is added/renamed, update CYCLE_SINGLE, SHIFT_LABELS,
 // INFO, SHIFT_TIMES, and any relevant export/link labels.
 let shifts = [];
+let chipsMinHeight = 0;
 let curFile = null;
 const MONTHS = ['ינואר','פברואר','מרץ','אפריל','מאי','יוני','יולי','אוגוסט','ספטמבר','אוקטובר','נובמבר','דצמבר'];
 const DAYS   = ['ראשון','שני','שלישי','רביעי','חמישי','שישי','שבת'];
@@ -421,6 +422,13 @@ function renderChips() {
   const [defaultYear, defaultMonth] = mv.split('-').map(Number);
   const el = document.getElementById('chips');
   const lbl = document.getElementById('chips-lbl');
+  if (!shifts.length) {
+    chipsMinHeight = 0;
+    el.style.minHeight = '38px';
+  } else {
+    chipsMinHeight = Math.max(chipsMinHeight, el.getBoundingClientRect().height || 38);
+    el.style.minHeight = chipsMinHeight + 'px';
+  }
   el.innerHTML = '';
   lbl.textContent = shifts.length ? shifts.length+' משמרות שנבחרו:' : 'אין משמרות — ערוך ידנית למטה';
 

@@ -73,7 +73,7 @@ Important code locations:
 
 In the selected-shift chips list, each chip is clickable and opens Google Calendar event creation for that specific shift. The inner `×` button deletes the shift and must call `stopPropagation()` so it does not open the link.
 
-Important UX rule: the `×` delete button is absolutely positioned in the top-right corner of every chip. When deleting from the chips list, call `setShift(..., false)` so the grid scroll-lock does not move the chips list. This lets the user repeatedly tap the same top-right `×` position to delete many shifts without the button sliding away under their finger.
+Important UX rule: the `×` delete button is absolutely positioned in the top-right corner of every chip. When deleting from the chips list, call `setShift(..., false)` so the grid scroll-lock does not move the chips list. The chips grid uses `auto-fill` rather than `auto-fit`, and `chipsMinHeight` keeps the list from collapsing while shifts remain selected. This lets the user repeatedly tap the same top-right `×` position to delete many shifts without the button sliding away under their finger, and prevents a disappearing lower row from exposing a Google Calendar link under the tap point.
 
 Avoid reintroducing double-click unless explicitly requested. Double-click previously made normal shift entry feel slow because click handling had to wait to distinguish single vs. double click.
 
