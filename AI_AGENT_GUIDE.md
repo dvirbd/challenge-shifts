@@ -1,10 +1,12 @@
-# AI Agent Guide — Challenge Shifts
+# AI Agent Guide — OCC Shift Calendar
 
 This file explains the project for future AI agents or developers editing it.
 
 ## Project Purpose
 
-This is a single-file Hebrew RTL web app for manually entering Challenge Airlines IL work shifts, opening individual shifts in Google Calendar event creation, and exporting all selected shifts as an `.ics` calendar file.
+This is a single-file Hebrew RTL web app for manually entering OCC shifts, opening individual shifts in Google Calendar event creation, and exporting all selected shifts as an `.ics` calendar file.
+
+The app is for OCC shift entry only. Keep the guide and public/user-facing documentation generic unless a specific operational detail is technically required by the app itself.
 
 The app is designed for a user who receives monthly shift schedules and wants to quickly mark shifts on a calendar grid, then import them into Google Calendar or another calendar app.
 
@@ -26,7 +28,7 @@ challenge-shifts.html → index.html
 
 Then publish from the repository root via GitHub Pages.
 
-The company logo is already embedded in the HTML as a `data:image/png;base64,...` URL, so no separate image file is required for deployment.
+The logo is already embedded in the HTML as a `data:image/png;base64,...` URL, so no separate image file is required for deployment.
 
 ## Shift Types
 
@@ -151,7 +153,7 @@ Current ICS details:
 - Location is exported as:
 
 ```text
-צ'אלנג' איירלינס (ישראל) בע"מ, אורן 4, שוהם, Israel
+[configured event location]
 ```
 
 This intentionally matches the user's preferred Google Calendar export style. Do not add `GEO`, `URL`, or `DESCRIPTION` map fields unless explicitly requested; this was tried and reverted.
