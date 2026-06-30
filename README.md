@@ -55,19 +55,6 @@ The event location is exported as:
 
 Open the HTML file in a browser, select the relevant month, enter the shifts manually, and click the ICS export button.
 
-## GitHub Pages Deployment
-
-To publish this as a GitHub Pages site:
-
-1. Rename the HTML file to `index.html`.
-2. Upload `index.html` and this `README.md` to a public GitHub repository.
-3. Go to repository `Settings` → `Pages`.
-4. Select deployment from the `main` branch and root folder.
-5. The site will be available at:
-
-```text
-https://USERNAME.github.io/REPOSITORY_NAME/
-```
 
 ## Privacy
 
