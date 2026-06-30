@@ -74,20 +74,6 @@ Event times are exported in UTC `Z` format for better compatibility with Google 
    - Click a selected-shift card to create that single event in Google Calendar.
    - Click the ICS export button to export all selected shifts at once.
 
-## GitHub Pages Deployment
-
-To publish this as a GitHub Pages site:
-
-1. Rename the HTML file to `index.html`.
-2. Upload `index.html` and this `README.md` to a public GitHub repository.
-3. Go to repository `Settings` → `Pages`.
-4. Select deployment from the `main` branch and root folder.
-5. The site will be available at:
-
-```text
-https://USERNAME.github.io/REPOSITORY_NAME/
-```
-
 ## Privacy
 
 All data stays local in the browser. The app does not upload shift data, images, or calendar data to any server.
